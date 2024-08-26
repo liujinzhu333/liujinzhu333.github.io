@@ -1,3 +1,5 @@
+title: 征途
 name: 行路难
+description: 行者
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
