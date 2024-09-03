@@ -1,5 +1,5 @@
 body {
-    margin: 60px auto;
+    margin: 0px auto;
     width: 70%;
 }
 nav ul, footer ul {
@@ -14,7 +14,7 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #999;
+    color: #666;
 }
 a:hover {
     text-decoration: underline;
@@ -35,7 +35,7 @@ footer {
 
 ul.posts { 
     margin: 20px auto 40px; 
-    font-size: 1.5em;
+    color: #999;
 }
 
 ul.posts li {
@@ -43,4 +43,19 @@ ul.posts li {
 }
 p.meta {
   font-size: 12px;
+}
+.more-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+.more-list>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  min-width: 30px;
+  box-shadow: 0 0 5px #ccc;
+  border-radius: 5px;
 }
