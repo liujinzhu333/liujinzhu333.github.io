@@ -51,6 +51,7 @@ p.meta {
   padding: 10px;
 }
 .more-list>div{
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
