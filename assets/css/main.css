@@ -1,6 +1,6 @@
 body {
     margin: 0px auto;
-    width: 70%;
+    width: 100%;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -44,13 +44,21 @@ ul.posts li {
 p.meta {
   font-size: 12px;
 }
+.header-nav{
+  padding: 0 20px;
+  border-bottom: 1px solid #ccc;
+}
+.container{
+  min-height: calc(100vh - 150px);
+  padding: 0 20px;
+}
 .more-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   padding: 10px;
 }
-.more-list>div{
+.more-list div{
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -60,3 +68,24 @@ p.meta {
   box-shadow: 0 0 5px #ccc;
   border-radius: 5px;
 }
+/** toast */
+.an-toast-container{
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  z-index: 99;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.an-toast {
+  box-shadow: 0 0 5px #ccc;
+  padding: 7px 14px;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 12px;
+}
+/** toast end */

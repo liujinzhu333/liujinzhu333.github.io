@@ -8,6 +8,7 @@ date: YYYY-MM-DD HH:MM:SS
 	  {% for post in site.posts %}
 	    <li>
         <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        {{ post.url }}
         <span>{{ post.date | date: "%Y/%m/%d" }}</span>
       </li>
 	  {% endfor %}

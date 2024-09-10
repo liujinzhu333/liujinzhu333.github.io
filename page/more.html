@@ -1,0 +1,12 @@
+---
+layout: default
+title: 更多
+permalink: /more/
+---
+<div class="more-list">
+  {% for item in site.data.skill %}
+    <a href="/details/{{item}}">
+      <div>{{ item }}</div>
+    </a>
+  {% endfor %}
+</div>

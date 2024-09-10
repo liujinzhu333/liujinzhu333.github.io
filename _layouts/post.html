@@ -3,7 +3,21 @@ layout: default
 ---
 <h1>{{ page.title }}</h1>
 <p class="meta">{{ page.date | date: "%Y/%m/%d" }}</p>
-
-<div class="post">
-  {{ content }}
+<div class="post-page">
+  <div class="post-nav">
+    {% assign headings = content | markdownify | split: '<h1>' %}
+      {% for heading in headings %}
+        {% if heading contains '</h1>' %}
+          {% assign heading_content = heading | split: '</h2>' %}
+          <li>
+            <a href="#{{ heading_content[0] | downcase | strip_html | strip_newlines | replace: ' ', '-' }}">
+              {{ heading_content[0] | strip_html }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+  </div>
+  <div class="post-content">
+    {{ content }}
+  </div>
 </div>
