@@ -1,0 +1,16 @@
+- name: github
+  url: https://github.com
+- name: Gitee
+  url: https://gitee.com
+- name: codePen
+  url: https://codepen.io
+- name: 掘金
+  url: https://juejin.im
+- name: 简书
+  url: https://www.jianshu.com
+- name: 知乎
+  url: https://www.zhihu.com
+- name: 博客园
+  url: https://www.cnblogs.com
+- name: 菜鸟教程
+  url: https://www.runoob.com

@@ -1,8 +1,32 @@
 ---
 layout: default
 title: 关于我
-permalink: /about/
+permalink: /about
 ---
 <div class="blurb">
 	<h1>关于我</h1>
-</div><!-- /.blurb -->
+  <!-- 个人基本信息 -->
+  <!-- 个人经历 -->
+  <!-- 技术 -->
+  <!-- 个人作品 -->
+  <!-- 项目经历 -->
+  <h4>技术栈</h4>
+  <div class="more-list">
+    {% for item in site.data.skill %}
+      <a href="/details/{{item.name}}">
+        <div class="skill-item">
+          {{ item.name }}
+          ({{ item.know}}/{{ item.total}})
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  <h4>联系方式</h4>
+  <div class="more-list">
+    {% for item in site.data.contact %}
+      <div class="contact-item">
+        {{ item.name }}：{{ item.value }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

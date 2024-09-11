@@ -1,12 +1,28 @@
 ---
 layout: default
 title: 更多
-permalink: /more/
+permalink: /more
 ---
+
+<h4>更多工具</h4>
 <div class="more-list">
-  {% for item in site.data.skill %}
-    <a href="/details/{{item}}">
-      <div>{{ item }}</div>
+  {% for util in site.data.utils %}
+    <a href="{{util.url}}" target="_blank">
+      <div class="util-item">
+        <div class="util-name">{{ util.name }}</div>
+        <div class="util-desc" alt="{{ util.desc }}">{{ util.desc }}</div>
+      </div>
     </a>
   {% endfor %}
 </div>
+<h4>常用网站</h4>
+<div class="more-list">
+  {% for site in site.data.website %}
+    <a href="{{site.url}}" target="_blank">
+      <div class="util-item">
+        <div class="util-name">{{ site.name }}</div>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+

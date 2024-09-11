@@ -1,3 +1,7 @@
+/**
+ * 工具函数
+ */
+
 /** 复制文本到剪贴板 */
 function copyTextToClipboard(str) {
   const el = document.createElement('textarea');

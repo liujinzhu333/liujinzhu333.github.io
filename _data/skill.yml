@@ -1,9 +1,54 @@
-- Javascript
-- HTML
-- CSS
-- Node.js
-- Vue.js
-- React.js
-- MongoDB
-- markdown
-- Git
+- name: Javascript
+  know: 0
+  total: 0
+- name: Typescript
+  know: 0
+  total: 0
+- name: HTML
+  know: 0
+  total: 0
+- name: CSS
+  know: 0
+  total: 0
+- name: Http
+  know: 0
+  total: 0
+- name: Ajax
+  know: 0
+  total: 0
+- name: jQuery
+  know: 0
+  total: 0
+- name: Bootstrap
+  know: 0
+  total: 0
+- name: Node.js
+  know: 0
+  total: 0
+- name: Vue.js
+  know: 0
+  total: 0
+- name: React.js
+  know: 0
+  total: 0
+- name: Sass
+  know: 0
+  total: 0
+- name: Less
+  know: 0
+  total: 0
+- name: markdown
+  know: 0
+  total: 0
+- name: Git
+  know: 0
+  total: 0
+- name: Webpack
+  know: 0
+  total: 0
+- name: Jekyll
+  know: 0
+  total: 0
+- name: Liquid
+  know: 0
+  total: 0
