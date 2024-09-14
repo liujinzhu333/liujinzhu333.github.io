@@ -3,3 +3,9 @@ name: 行路难
 description: 行者
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+
+tags: 
+  title: 标签
+  description: 标签列表
+  path: /tags/
+  layout: tags

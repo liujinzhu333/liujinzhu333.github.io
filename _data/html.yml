@@ -1,0 +1,45 @@
+- name: <!DOCTYPE >
+  type: 基础
+  description: 文档类型声明
+  info: 文档类型声明（Document Type Declaration，DTD）是一种声明文档类型的方式，它位于文档的第一行，位于 <html> 标签之前。它使浏览器或其他文档处理器知道如何正确地解析文档。
+  demo: <!DOCTYPE html>
+- name: <html>
+  description: 定义一个文档类型
+  type: 基础
+  demo: <html></html>
+- name: <head>
+  description: 包含文档的元信息
+  type: 基础
+  demo: <head></head>
+- name: <title>
+  description: 定义文档的标题
+  type: 基础
+  demo: <title>标题</title>
+- name: <body>
+  description: 定义文档的主体
+  type: 基础
+  demo: <body></body>
+- name: <h1> - <h6>
+  description: 定义标题
+  type: 基础
+  demo: <h1>标题1</h1>
+- name: <p>
+  description: 定义段落
+  type: 基础
+  demo: <p>段落</p>
+- name: <br>
+  description: 换行
+  type: 基础
+  demo: <p>段落<br />换行</p>
+- name: <hr>
+  description: 水平线
+  type: 基础
+  demo: <hr />
+- name: <!-- -->
+  description: 注释
+  type: 基础
+  demo: <!-- 注释 -->
+
+- name: <cc>
+  description: P
+  type: 其他

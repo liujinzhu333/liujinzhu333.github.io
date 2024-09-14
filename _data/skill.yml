@@ -1,13 +1,14 @@
-- name: Javascript
-  know: 0
-  total: 0
-- name: Typescript
-  know: 0
-  total: 0
+
 - name: HTML
   know: 0
   total: 0
 - name: CSS
+  know: 0
+  total: 0
+- name: Javascript
+  know: 0
+  total: 0
+- name: Typescript
   know: 0
   total: 0
 - name: Http

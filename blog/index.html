@@ -1,15 +1,78 @@
 ---
 layout: default
-title: 足迹
+title: 记录
 date: YYYY-MM-DD HH:MM:SS
 ---
-	<h1>{{ page.title }}</h1>
-	<ul class="posts">
+<style>
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .tag-list .tag-item {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .tag-list .tag-item:hover {
+    background-color: #f5f5f5;
+  }
+  .tag-list .tag-item.active {
+    background-color: #428bca;
+    color: #fff;
+  }
+
+</style>
+<div class="tag-list">
+  <div class="tag-item" data-tag="all">全部 <span>{{ site.posts.size }}</span></div>
+  {% for tag in site.tags %}
+    <div class="tag-item" data-tag="{{ tag[0] | slugify }}">
+      {{ tag[0] | slugify }} <span>{{ tag[1].size }}</span>
+    </div>
+  {% endfor %}
+</div>
+<div class="page-list all">
+  <ul class="posts">
 	  {% for post in site.posts %}
 	    <li>
+        {{ post.categories }}
         <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        {{ post.url }}
-        <span>{{ post.date | date: "%Y/%m/%d" }}</span>
+        <!-- {{ post.url }} -->
+        <!-- <span>{{ post.date | date: "%Y/%m/%d" }}</span> -->
       </li>
 	  {% endfor %}
 	</ul>
+</div>
+{% for tag in site.tags %}
+  <div class="page-list {{ tag[0] | slugify }}">
+    <ul>
+      {% assign pages_list = tag[1] %}
+      {% for post in pages_list %}
+        {% if post.title %}
+          <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
+
+<script>
+  var tagList = document.querySelector('.tag-list');
+  tagList.addEventListener('click', function(event) {
+    var target = event.target;
+    if (target.classList.contains('tag-item')) {
+      const pageList = document.querySelectorAll('.page-list');
+      pageList.forEach(function(page) {
+        page.style.display = 'none';
+      });
+      const currentTagPageList = document.querySelector('.page-list.' + target.dataset.tag);
+      currentTagPageList.style.display = 'block';
+    }
+  });
+</script>
+	
