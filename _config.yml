@@ -4,6 +4,9 @@ description: 行者
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 
+# 草稿功能
+drafts: true
+
 tags: 
   title: 标签
   description: 标签列表

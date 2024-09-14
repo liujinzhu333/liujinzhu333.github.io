@@ -33,6 +33,7 @@ date: YYYY-MM-DD HH:MM:SS
       {{ tag[0] | slugify }} <span>{{ tag[1].size }}</span>
     </div>
   {% endfor %}
+  <div class="tag-item" data-tag="add">新增</div>
 </div>
 <div class="page-list all">
   <ul class="posts">
@@ -60,8 +61,19 @@ date: YYYY-MM-DD HH:MM:SS
     </ul>
   </div>
 {% endfor %}
+<div class="page-list add">
+  <button onclick="addBlog()">新增文章</button>
+</div>
 
 <script>
+  function addBlog() {
+    const a = {
+      title: '新增文章',
+      content: '请输入内容',
+      category: '未分类',
+    }
+    copyTextToClipboard2(a);
+  }
   var tagList = document.querySelector('.tag-list');
   tagList.addEventListener('click', function(event) {
     var target = event.target;
