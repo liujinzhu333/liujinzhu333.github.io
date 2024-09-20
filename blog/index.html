@@ -24,6 +24,12 @@ date: YYYY-MM-DD HH:MM:SS
     background-color: #428bca;
     color: #fff;
   }
+  .page-list {
+    display: none;
+  }
+  .page-list.all {
+    display: block;
+  }
 
 </style>
 <div class="tag-list">
@@ -39,8 +45,8 @@ date: YYYY-MM-DD HH:MM:SS
   <ul class="posts">
 	  {% for post in site.posts %}
 	    <li>
-        {{ post.categories }}
         <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        {{ post.tags }}
         <!-- {{ post.url }} -->
         <!-- <span>{{ post.date | date: "%Y/%m/%d" }}</span> -->
       </li>

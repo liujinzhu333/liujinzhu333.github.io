@@ -4,3 +4,6 @@
 - name: 图片转字符画
   url: https://www.iloveimg.com/zh-cn
   desc: 一个简单好用的在线图片转字符画工具，可以将图片转换为字符画，并可以自定义字符集、字体大小、颜色等。
+- name: Day.js中文网
+  url: https://dayjs.fenxianglu.cn/
+  desc: Day.js是一个极简的JavaScript库，可以为现代浏览器解析、验证、操作和显示日期和时间。
