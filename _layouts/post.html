@@ -2,7 +2,7 @@
 layout: default
 ---
 <h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date: "%Y/%m/%d" }}</p>
+<p class="description-date">{{ page.date | date: "%Y/%m/%d" }}</p>
 <div class="post-page">
   <div class="post-nav">
     {% assign headings = content | markdownify | split: '<h1>' %}
