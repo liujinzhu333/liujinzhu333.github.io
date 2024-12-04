@@ -3,6 +3,330 @@ layout: default
 title: 关于我
 permalink: /about
 ---
+<script type="text/javascript">
+  var utilsList = [
+    {
+      name: '基础篇',
+      children: [
+        {
+          name: 'HTML/CSS',
+          status: '未知'
+        },
+        {
+          name: 'JavaScript',
+          status: '未知'
+        },
+        {
+          name: 'DOM',
+          status: '未知'
+        },
+      ],
+    },
+    {
+      name: '中级篇',
+      children: [
+        {
+          name: '效据格式（如JSON、XML）',
+          status: '未知'
+        },
+        {
+          name: 'RESTful API(RIjQuery Ajax,Fetch API, ReactiveX)',
+          status: '未知'
+        },
+        {
+          name: '可用性',
+          status: '未知'
+        },
+        {
+          name: '正则表达式',
+          status: '未知'
+        },
+        {
+          name: 'HTML语义化',
+          status: '未知'
+        },
+        {
+          name: '命令行',
+          status: '未知'
+        },
+        {
+          name: 'Node.js',
+          status: '未知'
+        },
+        {
+          name: 'DIV/CSS',
+          status: '未知'
+        },
+        {
+          name: 'SCSS/SASS',
+          status: '未知'
+        },
+        {
+          name: '矢量图形/矢量图形动画（如SVG）',
+          status: '未知'
+        },
+        {
+          name: '单页面应用',
+          status: '未知'
+        },
+      ]
+    },
+    {
+      name: '高级篇',
+      children: [
+        {
+          name: 'ES6/TypeScript',
+          status: '未知'
+        },
+        {
+          name: 'CSS3',
+          status: '未知'
+        },
+        {
+          name: '面向对象编程',
+          status: '未知'
+        },
+        {
+          name: '函数式编程',
+          status: '未知'
+        },
+        {
+          name: 'MVC/MWM/MV*',
+          status: '未知'
+        },
+        {
+          name: '安全性（如跨域）',
+          status: '未知'
+        },
+        {
+          name: '授权（如HTTP Basic,JWT等）',
+          status: '未知'
+        },
+      ]
+    },
+    {
+      name: '工程化',
+      children: [
+        {
+          name: '代码质量（如JSLint,ESLint,TSLint,CSLint）',
+          status: '未知'
+        },
+        {
+          name: '代码分析（如Code Climate）',
+          status: '未知'
+        },
+        {
+          name: '測试覆盖率',
+          status: '未知'
+        },
+        {
+          name: '构建系统（gulp,grunt,webpack等）',
+          status: '未知'
+        },
+        {
+          name: '自动构建（脚本）',
+          status: '未知'
+        },
+      ]
+    },
+    {
+      name: '兼容性',
+      children: [
+        {
+          name: '跨浏览器测试（如Chrome,IE,Safari,Firefox等）',
+          status: '未知'
+        },
+        {
+          name: '跨设备测试（如Desktop,Android,iOS跨版本測试（同一浏览器的不同版本）Windows phone等）',
+          status: '未知'
+        },
+        {
+          name: '跨版本测试（同一浏览器的不同版本）',
+          status: '未知'
+        },
+      ]
+    },
+    {
+      name: '设计',
+      children: [
+        {
+          name: '切页面',
+          status: '未知'
+        },
+        {
+          name: '线框图（Wireframe）',
+          status: '未知'
+        },
+        {
+          name: '网格布局（Grid Layout）',
+          status: '未知'
+        },
+        {
+          name: 'Flexbox布局',
+          status: '未知'
+        },
+        {
+          name: '响应式设计',
+          status: '未知'
+        },
+      ]
+    },
+    {
+      name: '性能与优化',
+      children: [
+        {
+          name: 'PageSpeed/Yslow优化加载优化（如gzip压縮，缓存等）',
+          status: '未知'
+        },
+        {
+          name: '性能测试（特别是移动Web）',
+          status: '未知'
+        },
+        {
+          name: '可用性',
+          status: '未知'
+        },
+        {
+          name: '压缩（如Minify,Uglify,CleanCSS等）',
+          status: '未知'
+        },
+      ]
+    },
+    {
+      name: '测试',
+      children: [
+        {
+          name: '单元测试',
+          status: '未知'
+        },
+        {
+          name: '服务测试',
+          status: '未知'
+        },
+        {
+          name: 'UI测试',
+          status: '未知'
+        },
+        {
+          name: '集成测试',
+          status: '未知'
+        },
+      ]
+    },
+    {
+      name: '调试',
+      children: [
+        {
+          name: '浏览器调试',
+          status: '未知'
+        },
+        {
+          name: 'Debug工具',
+          status: '未知'
+        },
+        {
+          name: 'Wireshark/Charles抓包',
+          status: '未知'
+        },
+        {
+          name: '远程设备调试（如Chrome Inspect Devices）',
+          status: '未知'
+        },
+      ]
+    },
+    {
+      name: '软件工桯',
+      children: [
+        {
+          name: '版本管理(如git,svn)',
+          status: '未知'
+        },
+        {
+          name: '包管理(如npm,bower)',
+          status: '未知'
+        },
+        {
+          name: '依赖管理',
+          status: '未知'
+        },
+        {
+          name: '模块化(如CommonJS,WebPack)',
+          status: '未知'
+        },
+      ]
+    },
+    {
+      name: 'SEO',
+      children: [
+        {
+          name: 'Sitemap(站点地图)',
+          status: '未知'
+        },
+        {
+          name: '內部链接建设',
+          status: '未知'
+        },
+        {
+          name: 'MicroData/MicroFormat',
+          status: '未知'
+        },
+        {
+          name: '页面静态内容生成',
+          status: '未知'
+        },
+        {
+          name: 'H1,H2,H3和strong使用',
+          status: '未知'
+        },
+        {
+          name: 'Title,Description优化',
+          status: '未知'
+        },
+        {
+          name: '页面静态内容生成',
+          status: '未知'
+        },
+      ]
+    },
+    {
+      name: '前端特定',
+      children: [
+        {
+          name: 'CSS/CSS3动画',
+          status: '未知'
+        },
+        {
+          name: 'JavaScript动画',
+          status: '未知'
+        },
+        {
+          name: 'Web字体嵌入',
+          status: '未知'
+        },
+        {
+          name: 'Icon字体',
+          status: '未知'
+        },
+        {
+          name: '图形和图表',
+          status: '未知'
+        },
+        {
+          name: 'CSS Sprite(*Iglue)',
+          status: '未知'
+        },
+        {
+          name: 'DOM操作(如jQuery,React等)',
+          status: '未知'
+        },
+        {
+          name: '模板引擎(如JSX,Handlebars,JSP,Mustaches)',
+          status: '未知'
+        },
+      ]
+    },
+  ]
+</script>
 <div class="blurb">
 	<h1>关于我</h1>
   <!-- 个人基本信息 -->

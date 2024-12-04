@@ -3,6 +3,173 @@ layout: default
 title: 历史
 permalink: /history
 ---
-<div class="blurb">
+<style>
+  .blurb {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+  }
+  .blurb-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .blurb-node {
+    position: relative;
+    min-height: 30px;
+    padding: 0 0 20px 120px;
+  }
+  .blurb-node:hover {
+    background-color: #f2f2f2;
+  }
+  .blurb-node:hover .blurb-node-spot {
+    background-color: #0af;
+  }
 
+  .blurb-node-time {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    padding: 5px;
+    max-width: 120px;
+    transform: translateX(calc(-100% - 10px));
+    font-size: 14px;
+    color: #777;
+  }
+  .blurb-node-spot {
+    position: absolute;
+    top: 16px;
+    left: 120px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: #ccc;
+  }
+  .blurb-node-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 120px;
+    width: 2px;
+    transform: translate3d(-50%, 0, 0);
+    background-color: #ccc;
+  }
+  .blurb-node-content {
+    padding: 5px 5px 5px 15px;
+  }
+  .blurb-node-data{
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .blurb-node-data-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .blurb-node-data-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    padding: 2px 5px;
+    background-color: #ddd;
+    border-radius: 4px;
+  }
+  .blurb-node-data-des {
+    font-size: 14px;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+</style>
+<div class="blurb">
+  <div class="blurb-list">
+    <div class="blurb-node">
+      <div class="blurb-node-line"></div>
+      <div class="blurb-node-spot"></div>
+      <div class="blurb-node-time">2012-09-01</div>
+      <div class="blurb-node-content">
+        <div class="blurb-node-description">
+          <p>我是第一条历史记录</p>
+        </div>
+        <div class="blurb-node-data">
+          <div class="blurb-node-data-item">
+            <span class="blurb-node-data-label">标签</span>
+            <span class="blurb-node-data-des">我是第一条历史记录我是第一条历史记录我是第一条历史记录我是第一条历史记录我是第一条历史记录我是第一条历史记录我是第一条历史记录</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div><!-- /.blurb -->
+<script>
+  var historyData = [
+    {
+      time: "2024-12-04",
+      description: "",
+      data: [
+        {
+          label: ['技术'],
+          description: "时间轴组件开发"
+        }
+      ]
+    },
+    {
+      time: "2021-09-01",
+      description: "",
+    }
+  ]
+  var historyList = document.querySelector(".blurb-list");
+  historyList.innerHTML = "";
+  for (var i = 0; i < historyData.length; i++) {
+    historyList.appendChild(initNode(historyData[i]));
+  }
+  // 创建内容节点
+  function createContent(data) {
+    const content = document.createElement("div");
+    content.classList.add("blurb-node-data");
+    for (var i = 0; i < data.length; i++) {
+      const item = document.createElement("div");
+      item.classList.add("blurb-node-data-item");
+      const label = document.createElement("span");
+      label.classList.add("blurb-node-data-label");
+      label.textContent = data[i].label;
+      const des = document.createElement("span");
+      des.classList.add("blurb-node-data-des");
+      des.textContent = data[i].description;
+      item.appendChild(label);
+      item.appendChild(des);
+      content.appendChild(item);
+    }
+    return content;
+  }
+  // 创建节点
+  function initNode(data) {
+    const nodeItem = document.createElement("div");
+    nodeItem.classList.add("blurb-node");
+    const nodeTime = document.createElement("div");
+    nodeTime.classList.add("blurb-node-time");
+    nodeTime.textContent = data.time;
+    const nodeLine = document.createElement("div");
+    nodeLine.classList.add("blurb-node-line");
+    const nodeSpot = document.createElement("div");
+    nodeSpot.classList.add("blurb-node-spot");
+    const nodeContent = document.createElement("div");
+    nodeContent.classList.add("blurb-node-content");
+    const nodeDescription = document.createElement("div");
+    nodeDescription.classList.add("blurb-node-description");
+    nodeDescription.textContent = data.description || "无题";
+    nodeContent.appendChild(nodeDescription);
+    if (data.data) {
+      nodeContent.appendChild(createContent(data.data));
+    }
+    nodeItem.appendChild(nodeTime);
+    nodeItem.appendChild(nodeLine);
+    nodeItem.appendChild(nodeSpot);
+    nodeItem.appendChild(nodeContent);
+    return nodeItem;
+  }
+</script>

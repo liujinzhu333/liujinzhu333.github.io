@@ -1,11 +1,11 @@
 
 - name: Konva
-  know: 0
+  know: 1
   total: 14
   link: /konva
 - name: HTML
   know: 0
-  total: 0
+  total: 110 + 16
 - name: CSS
   know: 0
   total: 0

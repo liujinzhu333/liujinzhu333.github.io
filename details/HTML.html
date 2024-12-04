@@ -12,11 +12,41 @@ permalink: /details/HTML
     height: 100%;
     background-color: #fff;
   }
+  .list {
+    list-style: none;
+  }
+  .list li {
+    padding-left: 10px;
+    list-style: inside;
+    color: #666
+  }
+  .an-table{
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+  }
+  .an-table th,.an-table td {
+    padding: 2px 5px;
+  }
 </style>
-<h1>HTML</h1>
-<p>超文本标记语言（HyperText Markup Language，HTML）是一种用于创建网页的标记语言。</p>
+<div>
+  <h2>什么是 HTML？</h2>
+  HTML 是用来描述网页的一种语言。
+  <ul class="list">
+    <li>HTML（HyperText Markup Language）是一种用于创建网页的标记语言。</li>
+    <li>HTML 不是一种编程语言，而是一种标记语言</li>
+    <li>标记语言是一套标记标签 (markup tag)</li>
+    <li>HTML 使用标记标签来描述网页</li>
+    <li>HTML 文档包含了HTML 标签及文本内容</li>
+    <li>HTML文档也叫做 web 页面</li>
+  </ul>
+</div>
+<h2>HTML 版本</h2>
+<div>
+</div>
+<h2>HTML 标签</h2>
+<h2>HTML 属性</h2>
 <h2>标签（118）</h2>
-<table border="1">
+<table border="0" class="an-table">
   <thead>
     <tr>
       <th>标签</th>
@@ -51,7 +81,7 @@ permalink: /details/HTML
     {% endfor %}
   </tbody>
 </table>
-<div id="an-modal">
+<!-- <div id="an-modal">
   <div class="an-modal-header">
     
   </div>
@@ -61,7 +91,7 @@ permalink: /details/HTML
   <div class="an-modal-code">
 
   </div>
-</div>
+</div> -->
 <div class="an-code-block">
   <div class="an-code-btn" onclick="toggleCodeBlock(this)">
     查看代码
