@@ -24,6 +24,9 @@ permalink: /history
   .blurb-node:hover .blurb-node-spot {
     background-color: #0af;
   }
+  .blurb-node:hover .blurb-node-line {
+    background-color: #0af;
+  }
 
   .blurb-node-time {
     position: absolute;
@@ -108,6 +111,16 @@ permalink: /history
 <script>
   var historyData = [
     {
+      time: "2024-12-06",
+      description: "",
+      data: [
+        {
+          label: ['技术', '待整理'],
+          description: "前端技术路线"
+        }
+      ]
+    },
+    {
       time: "2024-12-04",
       description: "",
       data: [
@@ -134,13 +147,15 @@ permalink: /history
     for (var i = 0; i < data.length; i++) {
       const item = document.createElement("div");
       item.classList.add("blurb-node-data-item");
-      const label = document.createElement("span");
-      label.classList.add("blurb-node-data-label");
-      label.textContent = data[i].label;
+      for (var j = 0; j < data[i].label.length; j++) {
+        const label = document.createElement("span");
+        label.classList.add("blurb-node-data-label");
+        label.textContent = data[i].label[j];
+        item.appendChild(label);
+      }
       const des = document.createElement("span");
       des.classList.add("blurb-node-data-des");
       des.textContent = data[i].description;
-      item.appendChild(label);
       item.appendChild(des);
       content.appendChild(item);
     }
@@ -161,7 +176,7 @@ permalink: /history
     nodeContent.classList.add("blurb-node-content");
     const nodeDescription = document.createElement("div");
     nodeDescription.classList.add("blurb-node-description");
-    nodeDescription.textContent = data.description || "无题";
+    nodeDescription.textContent = data.description || "无";
     nodeContent.appendChild(nodeDescription);
     if (data.data) {
       nodeContent.appendChild(createContent(data.data));
