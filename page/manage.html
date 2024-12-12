@@ -1,0 +1,31 @@
+---
+layout: default
+title: 管理
+permalink: /manage
+---
+<div>
+  待设计
+</div>
+<script type="module">
+  import IndexDB from '/assets/js/IndexDB/index.js'
+  (async function () {
+    const dbName = 'myDB', storeName = 'db_1'
+    const db = await IndexDB.openDB(dbName, storeName, 1)
+    var data = await IndexDB.addData(db, storeName, {
+      id: 111, // 必须且值唯一
+      name: '张三',
+      age: 18,
+      desc: 'helloWord'
+    })
+    console.log(data)
+
+    // var data = await IndexDB.getDataByKey(db, storeName, 111)
+    // console.log(data)
+
+    // var data = await IndexDB.updateDB(db, storeName, { id: 111, desc: '修改的内容' })
+    // console.log(data)
+
+    // var data = await IndexDB.deleteDB(db, storeName, 111)
+    // console.log(data)
+  })()
+</script>

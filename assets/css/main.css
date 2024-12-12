@@ -14,6 +14,7 @@
   border-bottom: 1px solid #ccc;
   top: 0;
   background-color: #fff;
+  z-index: 10;
 }
 .an-container {
   min-height: calc(100vh - 80px);
@@ -129,6 +130,7 @@ p.meta {
 }
 .an-card-group .an-card {
   flex: 1;
+  min-width: 200px;
 }
 .an-card {
   background-color: #fff;
@@ -151,6 +153,9 @@ p.meta {
 }
 /** card end */
 /** plan */
+.an-plan-content {
+  padding-left: 20px;
+}
 .an-plan-item {
   display: flex;
   cursor: pointer;

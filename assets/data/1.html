@@ -1,68 +1,3 @@
----
-layout: blank
-title: CV
-permalink: /cv
----
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  .cv-container {
-    padding: 20px;
-  }
-  .title {
-    padding: 5px 10px;
-    border-bottom: 2px solid #33aaff;
-    color: #3399ff;
-    font-weight: 500;
-    /* background-color: #33aaff; */
-    /* color: #fff; */
-  }
-  .content {
-    padding: 10px;
-  }
-  .content ul {
-    padding-left: 10px;
-  }
-  .info-card {
-    height: 200px;
-    background: rgba(0,0,0,0.01);
-  }
-  .info-card .info-img {
-    width: 100px;
-    height: 140px;
-    background-color: rgb(51, 170, 255, 0.3);
-  }
-</style>
-<div
-  class="cv-container"
->
-  <div class="info-card">
-    <div class="info-img">
-
-    </div>
-
-  </div>
-  <div class="title">
-    <h3>标题标题</h3>
-  </div>
-  <div class="content">
-    <ul>
-      <li>标题1</li>
-      <li>标题1</li>
-      <li>标题1</li>
-      <li>标题1</li>
-    </ul>
-  </div>
-</div>
-<div id="test"></div>
-<!-- 基本信息 -->
-<!-- 个人技能 -->
-<!-- 教育经历 -->
-<!-- 工作经历 -->
-<!-- 项目经历 -->
-<button onclick="copyToClipboard()">复制</button>
 <div style="--aspect-ratio:0.3488288288288288"
   class="mt-5 flex aspect-[var(--aspect-ratio)] w-full flex-col justify-center">
   <div id="resource-svg-wrap" data-renderer="editor"><svg xmlns="http://www.w3.org/2000/svg"
@@ -1825,80 +1760,52 @@ permalink: /cv
         d="M399.99486256192824 1691.0301235678273L402.49486256192824 1694.0301235678273 407.49486256192824 1689.0301235678273"
         fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg></div>
+  <div
+    class="fixed bottom-5 left-1/2 z-30 hidden -translate-x-1/2 transform animate-fade-slide-up flex-row gap-1.5 transition-all duration-300 lg:flex">
+    <div class="relative overflow-hidden rounded-full bg-stone-900 px-4 py-2 text-center text-white shadow-2xl"><span
+        class="items-center hidden"><span class="mr-2 text-sm font-semibold uppercase text-yellow-400">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">提示</font>
+          </font>
+        </span><span class="text-sm text-gray-200">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">右键单击​​主题可将其标记为已完成 &nbsp;</font>
+          </font>
+        </span></span><span class="relative z-20 block text-sm"><span
+          class="relative -top-[0.45px] mr-2 text-xs font-medium uppercase text-yellow-400">
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">进度</font>
+          </font>
+        </span><span>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">1/115</font>
+          </font>
+        </span>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">已</font>
+        </font><span>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">完成</font>
+          </font>
+        </span>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">​</font>
+        </font>
+      </span><span class="absolute bottom-0 left-0 top-0 z-10 bg-stone-700" style="width: 0.869565%;"></span></div>
+    <button class="group relative flex items-center gap-2 rounded-full bg-stone-900 px-3 text-sm text-yellow-400"><svg
+        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-calendar h-4 w-4 flex-shrink-0">
+        <path d="M8 2v4"></path>
+        <path d="M16 2v4"></path>
+        <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+        <path d="M3 10h18"></path>
+      </svg></button><button
+      class="group relative flex items-center gap-2 rounded-full bg-stone-900 px-3 text-sm text-yellow-400"><svg
+        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x h-4 w-4 flex-shrink-0">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg></button>
+  </div>
 </div>
-<script>
-  // console.log('\x1b[31m这是红色的文本\x1b[0m');
-  // console.log('%o', '<div style="background-color: #fdff00; width: 10px; height: 10px;">');
-
-  const g = document.querySelectorAll('g');
-  var all = 0
-  let data = []
-  for (let i = 0; i < g.length; i++) {
-    const item = g[i]
-    const rect = item.querySelector('rect')
-
-    if (item.dataset.type === 'topic') {
-      const index = data.findIndex(dataItem => dataItem.id === item.dataset.nodeId)
-      if (index < 0) {
-        data.push({
-          id: item.dataset.nodeId,
-          title: item.dataset.title,
-          subtopics: []
-        })
-      } else {
-        data[index] = {
-          id: item.dataset.nodeId,
-          title: item.dataset.title,
-          subtopics: [...data[index].subtopics]
-        }
-      }
-    } else if (item.dataset.type ==='subtopic') {
-      all += 1
-      const parentId  = item.dataset.parentId
-      const index = data.findIndex(dataItem => dataItem.id === parentId)
-      if (index < 0) {
-        data[data.length - 1].subtopics.push({
-          id: item.dataset.nodeId,
-          parentId: item.dataset.parentId,
-          title: item.dataset.title,
-        })
-        console.log(item.dataset.title)
-        // for (let j = 0; j < data.length; j++) {
-        //   const index2 = data[j].subtopics.findIndex(subtopic => subtopic.id === parentId)
-        //   const index3 = data.findIndex(dataItem => dataItem.id === data[j].parentId)
-        //   if (index3 > -1) {
-        //     console.log(data[j].subtopics)
-        //     // data[index3].subtopics[index2].subtopics.push({
-        //     //   id: item.dataset.nodeId,
-        //     //   parentId: item.dataset.parentId,
-        //     //   title: item.dataset.title,
-        //     // })
-        //   }
-        // }
-      } else {
-        data[index].subtopics.push({
-          id: item.dataset.nodeId,
-          parentId: item.dataset.parentId,
-          title: item.dataset.title,
-        })
-      }
-    }
-  }
-  const rect = document.querySelectorAll('rect[fill="#fdff00"]');
-  console.log(data);
-  console.log(all)
-  function copyToClipboard() {
-    copyTextToClipboard2(data);
-    const text = JSON.stringify(data);
-    let eall = 0
-    for (let i = 0; i < data.length; i++) {
-      document.white(data[i].title)
-      if (data[i].subtopics.length > 0) {
-        eall += data[i].subtopics.length
-      }
-    }
-    console.log(eall)
-  }
-  
-
-</script>

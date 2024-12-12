@@ -1,6 +1,9 @@
 /**
  * 效果函数
  */
+function showEffect(element) {
+  
+}
 window.addEventListener('click', (e) => {
   const x = e.clientX
   const y = e.clientY
@@ -14,6 +17,7 @@ window.addEventListener('click', (e) => {
   clickEffect.style.borderRadius = '50%'
   clickEffect.style.opacity = '0.9'
   clickEffect.style.zIndex = '9999'
+  clickEffect.style.pointerEvents = 'none'
   clickEffect.innerText = '🎈'
   document.body.appendChild(clickEffect)
   setTimeout(() => {

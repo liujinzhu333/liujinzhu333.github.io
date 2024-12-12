@@ -2,11 +2,31 @@
 layout: default
 title: 主页
 ---
+<style>
+  .display-none{
+    display: none;
+  }
+</style>
 <div class="home-container">
   <!-- 欢迎信息 -->
   <div id="hello"  class="an-card"></div>
   <!-- 年度计划 -->
   <div class="an-card-group">
+    <div class="an-card">
+      <div class="an-card-header">
+        待办
+      </div>
+      <div class="an-plan">
+        <div class="an-plan-item">
+          <input type="checkbox">
+          <label>前端技术路线</label>
+        </div>
+        <div class="an-plan-item">
+          <input type="checkbox">
+          历史数据整理
+        </div>
+      </div>
+    </div>
     <div class="an-card">
       <div class="an-card-header">
         2024年度计划
@@ -40,5 +60,80 @@ title: 主页
       </div>
     </div>
   </div>
+  <!-- 前端技术路线 -->
+  <div class="an-card-group">
+    <div class="an-card">
+      <div class="an-card-header">
+        前端技术路线
+      </div>
+      <div class="an-card-content" id="front-end">
+        <div class="an-plan">
+          <div class="an-plan-title"></div>
+          <div class="an-plan-item">
+            个人网站完善
+          </div>
+          <div class="an-plan-content">
+            <div class="an-plan-item">
+              个人网站完善
+            </div>
+            <div class="an-plan-item">
+              计划
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <script src="/assets/js/main.js"></script>
+<script src="/assets/data/frontEnd.js"></script>
+<script type="module">
+  import { plan } from '/assets/data/plan.js'
+  
+</script>
+
+<script type="text/javascript">
+  function planNode(){
+    let plan = document.createElement('div');
+    plan.classList.add('an-plan');
+    return plan;
+  }
+  function planItem(text) {
+    let item = document.createElement('div');
+    item.classList.add('an-plan-item');
+    let checkBox = document.createElement('input');
+    checkBox.type = 'checkbox';
+    item.appendChild(checkBox);
+    let textNode = document.createTextNode(text);
+    item.appendChild(textNode)
+    return item;
+  }
+  (function initFrontEnd(){
+    var frontEndDom = document.getElementById('front-end');
+    frontEndDom.innerHTML = '';
+    let content = document.createElement('div');
+    for (let i = 0; i < frontEnd.length; i++){
+      let plan = planNode()
+      let item = planItem(frontEnd[i].title);
+      plan.appendChild(item);
+      if (frontEnd[i].subtopics.length > 0){
+        let subContent = document.createElement('div');
+        subContent.classList.add('an-plan-content', 'display-none');
+        for (let j = 0; j < frontEnd[i].subtopics.length; j++){
+          let subItem = planItem(frontEnd[i].subtopics[j].title);
+          subContent.appendChild(subItem);
+        }
+        item.addEventListener('click', function(){
+          if (subContent.classList.contains('display-none')){
+            subContent.classList.remove('display-none');
+          } else {
+            subContent.classList.add('display-none');
+          }
+        })
+        plan.appendChild(subContent);
+      }
+      content.appendChild(plan);
+    }
+    frontEndDom.appendChild(content);
+  })()
+</script>
