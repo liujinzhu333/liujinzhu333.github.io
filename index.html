@@ -16,16 +16,13 @@ title: 主页
       <div class="an-card-header">
         待办
       </div>
-      <div class="an-plan">
-        <div class="an-plan-item">
-          <input type="checkbox">
-          <label>前端技术路线</label>
-        </div>
-        <div class="an-plan-item">
-          <input type="checkbox">
-          历史数据整理
-        </div>
+      <div id="todo"></div>
+    </div>
+    <div class="an-card">
+      <div class="an-card-header">
+        项目
       </div>
+      <div id="project-plan"></div>
     </div>
     <div class="an-card">
       <div class="an-card-header">
@@ -87,14 +84,10 @@ title: 主页
 </div>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/data/frontEnd.js"></script>
-<script type="module">
-  import { plan } from '/assets/data/plan.js'
-
-</script>
-
 <script type="text/javascript">
   function checkBox(text) {
     const label = document.createElement('label');
+    label.classList.add('an-checkbox');
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     label.appendChild(checkbox);
@@ -137,3 +130,10 @@ title: 主页
   }
   plan('front-end', frontEnd)
 </script>
+<script type="module">
+  import { planList, projectPlan } from '/assets/data/plan.js'
+  plan('todo', planList)
+  plan('project-plan', projectPlan)
+</script>
+
+
