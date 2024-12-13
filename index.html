@@ -3,13 +3,13 @@ layout: default
 title: 主页
 ---
 <style>
-  .display-none{
+  .display-none {
     display: none;
   }
 </style>
 <div class="home-container">
   <!-- 欢迎信息 -->
-  <div id="hello"  class="an-card"></div>
+  <div id="hello" class="an-card"></div>
   <!-- 年度计划 -->
   <div class="an-card-group">
     <div class="an-card">
@@ -89,51 +89,51 @@ title: 主页
 <script src="/assets/data/frontEnd.js"></script>
 <script type="module">
   import { plan } from '/assets/data/plan.js'
-  
+
 </script>
 
 <script type="text/javascript">
-  function planNode(){
-    let plan = document.createElement('div');
-    plan.classList.add('an-plan');
-    return plan;
+  function checkBox(text) {
+    const label = document.createElement('label');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    label.appendChild(checkbox);
+    if (text) {
+      const textNode = document.createTextNode(text);
+      label.appendChild(textNode);
+    }
+    return label;
   }
-  function planItem(text) {
-    let item = document.createElement('div');
+  function planItemTitle(data) {
+    const title = document.createElement('div');
+    title.classList.add('an-plan-item-title');
+    const treeDom = document.createElement('div');
+    treeDom.classList.add('an-plan-item-tree');
+    title.appendChild(treeDom);
+    title.appendChild(checkBox(data.name || data));
+    return title;
+  }
+  function planContent(data) {
+    const content = document.createElement('div');
+    content.classList.add('an-plan-content');
+    for (let i = 0; i < data.length; i++) {
+      let item = planItem(data[i]);
+      content.appendChild(item);
+    }
+    return content;
+  }
+  function planItem(data) {
+    const item = document.createElement('div');
     item.classList.add('an-plan-item');
-    let checkBox = document.createElement('input');
-    checkBox.type = 'checkbox';
-    item.appendChild(checkBox);
-    let textNode = document.createTextNode(text);
-    item.appendChild(textNode)
+    item.appendChild(planItemTitle(data))
+    item.appendChild(planContent(data.children))
     return item;
   }
-  (function initFrontEnd(){
-    var frontEndDom = document.getElementById('front-end');
-    frontEndDom.innerHTML = '';
-    let content = document.createElement('div');
-    for (let i = 0; i < frontEnd.length; i++){
-      let plan = planNode()
-      let item = planItem(frontEnd[i].title);
-      plan.appendChild(item);
-      if (frontEnd[i].subtopics.length > 0){
-        let subContent = document.createElement('div');
-        subContent.classList.add('an-plan-content', 'display-none');
-        for (let j = 0; j < frontEnd[i].subtopics.length; j++){
-          let subItem = planItem(frontEnd[i].subtopics[j].title);
-          subContent.appendChild(subItem);
-        }
-        item.addEventListener('click', function(){
-          if (subContent.classList.contains('display-none')){
-            subContent.classList.remove('display-none');
-          } else {
-            subContent.classList.add('display-none');
-          }
-        })
-        plan.appendChild(subContent);
-      }
-      content.appendChild(plan);
-    }
-    frontEndDom.appendChild(content);
-  })()
+  function plan(id, data){
+    const plan = document.getElementById(id);
+    plan.innerHTML = '';
+    plan.classList.add('an-plan');
+    plan.appendChild(planContent(data))
+  }
+  plan('front-end', frontEnd)
 </script>

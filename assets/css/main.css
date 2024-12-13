@@ -153,11 +153,13 @@ p.meta {
 }
 /** card end */
 /** plan */
-.an-plan-content {
+.an-plan-item > .an-plan-content {
   padding-left: 20px;
 }
 .an-plan-item {
-  display: flex;
+  
+}
+.an-plan-item-title {
   cursor: pointer;
   padding: 2px 5px;
   border-radius: 4px;
@@ -165,6 +167,7 @@ p.meta {
     background-color: #f5f5f5;
   }
 }
+
 /** plan end */
 
 .home-container{
