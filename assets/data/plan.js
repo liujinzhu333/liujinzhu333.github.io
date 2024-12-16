@@ -1,3 +1,16 @@
+export const planTodo = [
+  {
+    
+  },
+]
+export const planFinished = [
+  {
+    name: 'plan组件添加状态',
+    title: '',
+    children: [],
+    status: 2,
+  },
+]
 export const planList = [
   {
     name: '学习前端技术',
@@ -6,22 +19,54 @@ export const planList = [
     status: 0,
   },
   {
-    name: 'plan组件添加状态',
+    name: '历史页面功能优化',
     title: '',
-    children: [],
     status: 0,
+    children: [
+      {
+        name: '数据格式扁平化处理',
+        title: '',
+        children: [],
+        status: 0,
+      },
+      {
+        name: '添加label筛选功能',
+        title: '',
+        children: [],
+        status: 0,
+      },
+      {
+        name: '添加搜索功能',
+        title: '',
+        children: [],
+        status: 0,
+      },
+    ],
   },
   {
-    name: 'plan组件添加type属性',
+    name: 'plan组件完善',
     title: '',
-    children: [],
     status: 0,
+    children: [
+      {
+        name: 'plan组件添加type属性',
+        title: '',
+        children: [],
+        status: 0,
+      },
+      {
+        name: 'plan组件添加树形结构',
+        title: '',
+        children: [],
+        status: 0,
+      },
+    ],
   },
   {
     name: '整理历史数据',
     title: '',
+    status: 1,
     children: [],
-    status: 0,
   }
 ]
 // 项目计划
@@ -38,5 +83,4 @@ export const projectPlan = [
     children: [],
     status: 0,
   }
-
 ]

@@ -97,13 +97,69 @@ title: 主页
     }
     return label;
   }
+
+  function planStatus(status) {
+    const stateMap = {
+      '0': {
+        color: 'grey',
+        text: '未开始',
+      },
+      '1': {
+        color: 'blue',
+        text: '进行中',
+      },
+      '2': {
+        color: 'green',
+        text: '已完成',
+      },
+    }
+    const stateDom = document.createElement('span');
+    stateDom.classList.add('an-plan-item-state');
+    stateDom.classList.add(stateMap[status].color)
+    return stateDom;
+  }
+  function planGrade(grade) {
+    const gradeMap = {
+      '0': {
+        color: 'lv0',
+        text: '',
+      },
+      '1': {
+        color: 'lv1',
+        text: '推荐',
+      },
+      '2': {
+        color: 'lv2',
+        text: '推荐',
+      },
+      '3': {
+        color: 'lv3',
+        text: '推荐',
+      },
+    }
+    const gradeDom = document.createElement('span');
+    gradeDom.classList.add('an-plan-item-grade');
+    gradeDom.classList.add(gradeMap[grade].color)
+    return gradeDom;
+  }
   function planItemTitle(data) {
     const title = document.createElement('div');
     title.classList.add('an-plan-item-title');
-    const treeDom = document.createElement('div');
-    treeDom.classList.add('an-plan-item-tree');
-    title.appendChild(treeDom);
-    title.appendChild(checkBox(data.name || data));
+    // TODO:
+    // if (data.children && data.children.length > 0) {
+    //   const treeDom = document.createElement('div');
+    //   treeDom.classList.add('an-plan-item-tree');
+    //   title.appendChild(treeDom);
+    // }
+    if (data.status !== undefined) {
+      title.appendChild(planStatus(data.status));
+    }
+    if (data.grade !== undefined && data.grade !== 0) {
+      title.appendChild(planGrade(data.grade));
+    }
+    const text = document.createTextNode(data.name || data);
+    title.appendChild(text);
+    // title.appendChild(checkBox(data.name || data));
     return title;
   }
   function planContent(data) {

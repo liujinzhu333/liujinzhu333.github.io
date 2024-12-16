@@ -9,21 +9,26 @@ permalink: /history
     max-width: 1200px;
     width: 100%;
   }
+
   .blurb-list {
     display: flex;
     flex-direction: column;
   }
+
   .blurb-node {
     position: relative;
     min-height: 30px;
     padding: 0 0 20px 120px;
   }
+
   .blurb-node:hover {
     background-color: #f2f2f2;
   }
+
   .blurb-node:hover .blurb-node-spot {
     background-color: #0af;
   }
+
   .blurb-node:hover .blurb-node-line {
     background-color: #0af;
   }
@@ -38,6 +43,7 @@ permalink: /history
     font-size: 14px;
     color: #777;
   }
+
   .blurb-node-spot {
     position: absolute;
     top: 16px;
@@ -48,6 +54,7 @@ permalink: /history
     transform: translate3d(-50%, -50%, 0);
     background-color: #ccc;
   }
+
   .blurb-node-line {
     position: absolute;
     top: 0;
@@ -57,28 +64,22 @@ permalink: /history
     transform: translate3d(-50%, 0, 0);
     background-color: #ccc;
   }
+
   .blurb-node-content {
     padding: 5px 5px 5px 15px;
   }
-  .blurb-node-data{
+
+  .blurb-node-data {
     margin-top: 7px;
     display: flex;
     flex-direction: column;
     gap: 7px;
   }
+
   .blurb-node-data-item {
     display: flex;
     align-items: center;
     gap: 4px;
-  }
-  .blurb-node-data-label {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    padding: 2px 5px;
-    background-color: #ddd;
-    border-radius: 4px;
   }
   .blurb-node-data-des {
     font-size: 14px;
@@ -87,7 +88,20 @@ permalink: /history
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .blurb-nav {
+    position: sticky;
+    top: 40px;
+    padding: 5px 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 10;
+    background-color: #fff;
+  }
 </style>
+<div class="blurb-nav">
+</div>
 <div class="blurb">
   <div class="blurb-list">
     <div class="blurb-node">
@@ -107,115 +121,18 @@ permalink: /history
       </div>
     </div>
   </div>
-</div><!-- /.blurb -->
+</div>
 <script src="/assets/js/components/blurb.js"></script>
-<script>
-  var historyData = [
-    {
-      time: "2025-01-07",
-      description: "",
-      data: [
-        {
-          label: ['生活'],
-          description: "老婆生日（腊月初七）"
-        }
-      ]
-    },
-    {
-      time: "2024-12-13",
-      description: "",
-      data: [
-        {
-          label: ['技术'],
-          description: "网易163邮箱注册成功（jinzhu_an）"
-        },
-        {
-          label: ['技术'],
-          description: "gitHub账号注册成功（greenSmallBean[绿小豆]）"
-        },
-        {
-          label: ['技术'],
-          description: "前端技术路线翻译完成"
-        },
-        {
-          label: ['技术', '待完善'],
-          description: "计划组件plan"
-        }
-      ]
-    },
-    {
-      time: "2024-12-10",
-      description: "",
-      data: [
-        {
-          label: ['娱乐'],
-          description: "和老婆迪士尼半日游"
-        },
-        {
-          label: ['生活'],
-          description: "陪老婆上海一妇幼孕初检"
-        }
-      ]
-    },
-    {
-      time: "2024-12-08",
-      description: "",
-      data: [
-        {
-          label: ['生活'],
-          description: "文峰广场逛商场半日"
-        }
-      ]
-    },
-    {
-      time: "2024-12-06",
-      description: "",
-      data: [
-        {
-          label: ['技术', '待整理'],
-          description: "前端技术路线"
-        }
-      ]
-    },
-    {
-      time: "2024-12-04",
-      description: "",
-      data: [
-        {
-          label: ['技术'],
-          description: "时间轴组件开发"
-        }
-      ]
-    },
-    {
-      time: "2024-12-01",
-      description: "",
-      data: [
-        {
-          label: ['娱乐'],
-          description: "上海海洋水族馆"
-        }
-      ]
-    },
-    {
-      time: "2024-11-30",
-      description: "",
-      data: [
-        {
-          label: ['娱乐'],
-          description: "上博号主题航班船日航"
-        }
-      ]
-    },
-    {
-      time: "2021-09-01",
-      description: "",
-    }
-  ]
-  var historyList = document.querySelector(".blurb-list");
-  historyList.innerHTML = "";
-  for (var i = 0; i < historyData.length; i++) {
-    historyList.appendChild(initNode(historyData[i]));
+<script type="text/javascript">
+
+</script>
+<script type="module">
+  import { historyData, historyLife, historyWork } from "/assets/data/history/index.js"
+  function createLabel(text){
+    const label = document.createElement("span");
+    label.classList.add("an-label");
+    label.textContent = text
+    return label;
   }
   // 创建内容节点
   function createContent(data) {
@@ -224,11 +141,10 @@ permalink: /history
     for (var i = 0; i < data.length; i++) {
       const item = document.createElement("div");
       item.classList.add("blurb-node-data-item");
-      for (var j = 0; j < data[i].label.length; j++) {
-        const label = document.createElement("span");
-        label.classList.add("blurb-node-data-label");
-        label.textContent = data[i].label[j];
-        item.appendChild(label);
+      if (data[i].label && data[i].label.length > 0) {
+        for (var j = 0; j < data[i].label.length; j++) {
+          item.appendChild(createLabel(data[i].label[j]));
+        }
       }
       const des = document.createElement("span");
       des.classList.add("blurb-node-data-des");
@@ -264,4 +180,19 @@ permalink: /history
     nodeItem.appendChild(nodeContent);
     return nodeItem;
   }
+  function initData(data) {
+    var historyList = document.querySelector(".blurb-list");
+    historyList.innerHTML = "";
+    for (var i = 0; i < data.length; i++) {
+      historyList.appendChild(initNode(data[i]));
+    }
+  }
+  initData(historyData)
+  function initNav(data) {
+    const historyNav = document.querySelector(".blurb-nav");
+    for (var i = 0; i < data.length; i++) {
+      historyNav.appendChild(createLabel(data[i]));
+    }
+  }
+  initNav(historyWork)
 </script>
