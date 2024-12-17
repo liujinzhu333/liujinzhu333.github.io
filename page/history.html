@@ -114,7 +114,7 @@ permalink: /history
         </div>
         <div class="blurb-node-data">
           <div class="blurb-node-data-item">
-            <span class="blurb-node-data-label">标签</span>
+            <span class="blurb-node-data-label an-label">标签</span>
             <span class="blurb-node-data-des">我是第一条历史记录我是第一条历史记录我是第一条历史记录我是第一条历史记录我是第一条历史记录我是第一条历史记录我是第一条历史记录</span>
           </div>
         </div>
@@ -123,15 +123,18 @@ permalink: /history
   </div>
 </div>
 <script src="/assets/js/components/blurb.js"></script>
-<script type="text/javascript">
-
-</script>
 <script type="module">
-  import { historyData, historyLife, historyWork } from "/assets/data/history/index.js"
-  function createLabel(text){
+  import { historyData, historyWork } from "/assets/data/history/index.js"
+  function createLabel(text, clickFn){
     const label = document.createElement("span");
     label.classList.add("an-label");
     label.textContent = text
+    if (clickFn) {
+      label.classList.add("an-label-clickable");
+      label.addEventListener("click", function(e) {
+        clickFn(e, text)
+      })
+    }
     return label;
   }
   // 创建内容节点
@@ -148,7 +151,7 @@ permalink: /history
       }
       const des = document.createElement("span");
       des.classList.add("blurb-node-data-des");
-      des.textContent = data[i].description;
+      des.textContent = data[i].title;
       item.appendChild(des);
       content.appendChild(item);
     }
@@ -167,12 +170,12 @@ permalink: /history
     nodeSpot.classList.add("blurb-node-spot");
     const nodeContent = document.createElement("div");
     nodeContent.classList.add("blurb-node-content");
-    const nodeDescription = document.createElement("div");
-    nodeDescription.classList.add("blurb-node-description");
-    nodeDescription.textContent = data.description || "无";
-    nodeContent.appendChild(nodeDescription);
-    if (data.data) {
-      nodeContent.appendChild(createContent(data.data));
+    // const nodeDescription = document.createElement("div");
+    // nodeDescription.classList.add("blurb-node-description");
+    // nodeDescription.textContent = data.description || "无";
+    // nodeContent.appendChild(nodeDescription);
+    if (data.children) {
+      nodeContent.appendChild(createContent(data.children));
     }
     nodeItem.appendChild(nodeTime);
     nodeItem.appendChild(nodeLine);
@@ -187,12 +190,32 @@ permalink: /history
       historyList.appendChild(initNode(data[i]));
     }
   }
-  initData(historyData)
+  function getHistoryData(label) {
+    initData(historyData(label))
+  }
+  function clickLabel(el, label) {
+    const allLabel = document.querySelectorAll(".an-label");
+    for (var i = 0; i < allLabel.length; i++) {
+      allLabel[i].classList.remove("active");
+    }
+    el.target.classList.toggle("active")
+    getHistoryData(label)
+  }
   function initNav(data) {
     const historyNav = document.querySelector(".blurb-nav");
     for (var i = 0; i < data.length; i++) {
-      historyNav.appendChild(createLabel(data[i]));
+      const label = createLabel(data[i], clickLabel)
+      if (data[i] === '技术'){
+        label.classList.add("active")
+      }
+      historyNav.appendChild(label);
     }
   }
   initNav(historyWork)
+  getHistoryData('技术')
+  function bbb(aa, cc) {
+    console.log(aa, cc)
+  }
+  const bbb2 = bbb.bind(null, 'bbb')
+  bbb2()
 </script>

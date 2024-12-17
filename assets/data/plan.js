@@ -15,8 +15,9 @@ export const planList = [
   {
     name: '学习前端技术',
     title: '',
+    link: 'https://roadmap.sh/frontend',
     children: [],
-    status: 0,
+    status: 1,
   },
   {
     name: '历史页面功能优化',
@@ -24,16 +25,16 @@ export const planList = [
     status: 0,
     children: [
       {
-        name: '数据格式扁平化处理',
+        name: '数据格式结构处理',
         title: '',
         children: [],
-        status: 0,
+        status: 2,
       },
       {
         name: '添加label筛选功能',
         title: '',
         children: [],
-        status: 0,
+        status: 2,
       },
       {
         name: '添加搜索功能',
@@ -48,6 +49,12 @@ export const planList = [
     title: '',
     status: 0,
     children: [
+      {
+        name: 'plan数据结构调整',
+        title: '',
+        children: [],
+        status: 0,
+      },
       {
         name: 'plan组件添加type属性',
         title: '',

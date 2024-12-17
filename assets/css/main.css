@@ -257,4 +257,15 @@ div.highlight{
   padding: 2px 5px;
   background-color: #ddd;
   border-radius: 4px;
+  &.an-label-clickable {
+    cursor: pointer;
+    &.active {
+      background-color: #3399ff;
+      color: #fff;
+    }
+    &:hover {
+      background-color: #3399ff;
+      color: #fff;
+    }
+  }
 }
