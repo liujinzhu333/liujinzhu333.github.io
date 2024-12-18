@@ -4,7 +4,7 @@ function hello() {
   // const time = new Date().toLocaleDateString();
   const hour = new Date().getHours();
   let timeText = ''
-  if (hour < 6 || hour >= 20) {
+  if (hour < 6 || hour >= 22) {
     timeText = `深夜好！`;
   } else if (hour < 12) {
     timeText = `早上好！`
