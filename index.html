@@ -183,7 +183,9 @@ title: 主页
     const item = document.createElement('div');
     item.classList.add('an-plan-item');
     item.appendChild(planItemTitle(data))
-    item.appendChild(planContent(data.children))
+    if (data.children && data.children.length > 0) {
+      item.appendChild(planContent(data.children))
+    }
     return item;
   }
   function plan(id, data){
