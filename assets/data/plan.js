@@ -20,6 +20,12 @@ export const planList = [
     status: 1,
   },
   {
+    name: '旅行计划清单整理',
+    title: '',
+    children: [],
+    status: 0,
+  },
+  {
     name: '历史页面功能优化',
     title: '',
     status: 0,
