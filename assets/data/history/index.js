@@ -124,6 +124,12 @@ export const historyLife = [
 // 技术
 export const historyTech = [
   {
+    time: "2024-12-18",
+    title: "单页简历（CV）",
+    description: "",
+    label: ['技术'],
+  },
+  {
     time: "2024-12-16",
     title: "plan组件添加状态",
     description: "",
@@ -132,7 +138,7 @@ export const historyTech = [
   {
     time: "2024-12-13",
     title: "账号注册",
-    description: "网易163邮箱注册成功（jinzhu_an）,gitHub账号注册成功（greenSmallBean[绿小豆]）[@jinzhu37]",
+    description: "网易163邮箱注册成功（jinzhu_an@163.com）,gitHub账号注册成功（greenSmallBean[绿小豆]）[@jinzhu37]",
     label: ['技术'],
   },
   {

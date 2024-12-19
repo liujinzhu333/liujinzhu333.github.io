@@ -93,7 +93,8 @@ export const projectPlan = [
   {
     name: '基本HTML网站',
     title: '',
-    status: 0,
+    link: 'https://github.com/greenSmallBean/basic-html-website',
+    status: 2,
   },
   {
     name: '个人作品集',
