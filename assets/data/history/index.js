@@ -7,6 +7,12 @@ export const historyLife = [
     label: ['生活'],
   },
   {
+    time: "2024-12-20",
+    title: "迪士尼游玩",
+    description: "和老婆迪士尼游玩，旋转木马，花车巡游，冬日巡游，皮影戏。晚上吃火锅。",
+    label: ['娱乐'],
+  },
+  {
     time: "2024-12-10",
     title: "迪士尼半日游",
     description: "下午和老婆迪士尼半日游",
@@ -120,9 +126,51 @@ export const historyLife = [
     description: "过山车，海盗船",
     label: ['娱乐','生活'],
   },
+  {
+    time: "2023-07-25",
+    title: "结婚，六月初八，妈妈生日",
+    description: "",
+    label: ['生活'],
+  },
+  {
+    time: "2023-0",
+    title: "第一次去迪士尼",
+    description: "",
+    label: ['生活'],
+  },
+  {
+    time: "2023-0",
+    title: "领结婚证",
+    description: "",
+    label: ['生活'],
+  },
+  {
+    time: "2023-0",
+    title: "订婚",
+    description: "",
+    label: ['生活'],
+  },
+  {
+    time: "2022-0",
+    title: "周庄",
+    description: "",
+    label: ['生活'],
+  },
+  {
+    time: "2022-0",
+    title: "第一次去上海",
+    description: "",
+    label: ['生活'],
+  },
 ]
 // 技术
 export const historyTech = [
+  {
+    time: "2024-12-19",
+    title: "基础HTML网站",
+    description: "",
+    label: ['技术'],
+  },
   {
     time: "2024-12-18",
     title: "单页简历（CV）",
