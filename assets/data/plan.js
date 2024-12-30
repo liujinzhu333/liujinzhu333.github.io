@@ -99,12 +99,14 @@ export const projectPlan = [
   {
     name: '个人作品集',
     title: '',
-    status: 0,
+    link: 'https://greensmallbean.github.io/website/',
+    status: 2,
   },
   {
     name: '更新日志组件',
     title: '',
-    status: 0,
+    link: 'https://greensmallbean.github.io/website/changlog',
+    status: 2,
   },
   {
     name: '推荐卡',

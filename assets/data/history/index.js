@@ -7,6 +7,18 @@ export const historyLife = [
     label: ['生活'],
   },
   {
+    time: "2024-12-29",
+    title: "金桥商场",
+    description: "商场购物，买了两双鞋，两件衣服, 盒马逛了逛",
+    label: ['生活'],
+  },
+  {
+    time: "2024-12-28",
+    title: "周庄古镇，苏州",
+    description: "周庄古镇一日游",
+    label: ['旅行', '生活'],
+  },
+  {
     time: "2024-12-20",
     title: "迪士尼游玩",
     description: "和老婆迪士尼游玩，旋转木马，花车巡游，冬日巡游，皮影戏。晚上吃火锅。",
@@ -165,6 +177,12 @@ export const historyLife = [
 ]
 // 技术
 export const historyTech = [
+  {
+    time: "2024-12-30",
+    title: "变更日志， 时间轴组件",
+    description: "",
+    label: ['技术'],
+  },
   {
     time: "2024-12-19",
     title: "基础HTML网站",
